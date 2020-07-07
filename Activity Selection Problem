@@ -1,0 +1,41 @@
+#include<stdio.h>
+void printmaxact(int s[],int e[],int n)
+{
+	int i,j,c=0;
+	printf("Following Activities are Selected Starting With:\n");
+	i=0;
+	printf("%d \n",i);
+
+	
+	for(j=1;j<n;j++)
+	{
+		if(s[j]>=e[i])
+		{
+			printf("%d \n",j);
+			i=j;
+			c++;
+		}
+	}
+	printf("The Maximum Number of Activities Selected:%d\n",c+1);
+}
+int main()
+{
+	int start[100],end[100],i,n;
+	printf("Enter the number of activies:\n");
+	scanf("%d",&n);
+	printf("Enter the starting time of the Activites:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&start[i]);
+		
+	}
+	printf("Enter the Ending time of the Activities:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&end[i]);
+		
+	}
+	printmaxact(start,end,n);
+	return 0;
+	
+}
